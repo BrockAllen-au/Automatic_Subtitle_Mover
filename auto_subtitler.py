@@ -8,9 +8,15 @@ import shutil
 
 
 def main():
+    """Automatic subtitle name and copier program."""
     path_to_subs = get_valid_directory("Path to subtitle folder: ")
     path_to_media_files = get_valid_directory("Path to media folder: ")
     parent_dirs = os.listdir(path_to_subs)
+    copy_subtitles(parent_dirs, path_to_media_files, path_to_subs)
+
+
+def copy_subtitles(parent_dirs, path_to_media_files, path_to_subs):
+    """Copies English subtitle with the largest file size to designated media file path."""
     for directory in parent_dirs:
         subtitles = os.listdir(f"{path_to_subs}/{directory}")
         print(f"subtitles found in {directory} {subtitles}")
