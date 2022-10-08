@@ -19,7 +19,6 @@ def copy_subtitles(parent_dirs, path_to_media_files, path_to_subs):
     """Copies English subtitle with the largest file size to designated media file path."""
     for directory in parent_dirs:
         subtitles = os.listdir(f"{path_to_subs}/{directory}")
-        print(f"subtitles found in {directory} {subtitles}")
         sub_to_copy = ""
         file_size_compare = 0
         for subtitle in subtitles:
@@ -28,9 +27,13 @@ def copy_subtitles(parent_dirs, path_to_media_files, path_to_subs):
                 file_size = file_stats.st_size
                 if file_size > file_size_compare:
                     sub_to_copy = subtitle
-        source = f"{path_to_subs}/{directory}/{sub_to_copy}"
-        destination = f"{path_to_media_files}/{directory}.eng.srt"
-        shutil.copyfile(source, destination)
+        try:
+            source = f"{path_to_subs}/{directory}/{sub_to_copy}"
+            destination = f"{path_to_media_files}/{directory}.eng.srt"
+            shutil.copyfile(source, destination)
+            print(f"Successfully copied {source} --> {destination}")
+        except PermissionError:
+            print(f"Unable to access file {source}, or no matching subtitle found in {directory} directory")
 
 
 def get_valid_directory(prompt):
