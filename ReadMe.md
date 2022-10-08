@@ -7,7 +7,10 @@ Currently the program looks for English subtitles only.
 Python 3.x
 
 # Usage
-python.exe auto_subtitler.py
+python.exe auto_subtitler.py\
+
+All copy activity is logged to the same directory as the auto_subtitler.py to a log file 
+"auto_subtitler.log"
 
 This will then prompt you for the source of your subtitle folders:\
 "C:\Temp\Media\Subtitles" and will prompt for your desired destination of the subtitle file:\
