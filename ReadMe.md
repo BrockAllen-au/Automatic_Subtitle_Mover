@@ -20,3 +20,7 @@ Path to media folder: C:\Temp\Media
 
 All copy activity is logged to the same directory as the auto_subtitler.py to a log file 
 "auto_subtitler.log"
+```
+Successfully copied C:\Temp\Media\Subs\TV_EP_S01E01/3_English.srt --> C:\Temp\Media\TV_EP_S01E01.eng.srt
+Successfully copied C:\Temp\Media\Subs\TV_EP_S01E02/4_English.srt --> C:\Temp\Media\TV_EP_S01E02.eng.srt
+```
