@@ -1,7 +1,5 @@
 """
-Names subtitles the same as their parent folder and copies the files to the root directory where media is located
-Structure of folders:
-Media_Files/Subs/Episode_Sub_Folders/episode.srt
+Names subtitles the same as their parent folder and copies the files to a folder of your choice
 """
 import os
 import shutil
