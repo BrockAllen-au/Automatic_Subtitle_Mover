@@ -44,4 +44,5 @@ def get_valid_directory(prompt):
     return user_directory
 
 
-main()
+if __name__ == '__main__':
+    main()
